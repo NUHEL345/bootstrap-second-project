@@ -15,10 +15,20 @@ body{
   padding: 0 15px;
 }
 .card {
-    margin: 16px
+    margin: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-10px) scale(1.03) rotate(-1deg);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.card-img-top{
+    transition: transform 0.4s ease;
+}
+.card:hover .card-img-top {
+    transform: scale(1.08);
 }
 .sale-badge {
     position: absolute;
@@ -42,8 +52,8 @@ body{
 }
 .content-text{
     color: goldenrod;
-    font-weight: 700;
-    line-height: 1.7;
+    font-weight:700;
+    line-height:1.7;
 }
 .metrics{
     display: flex;
@@ -61,8 +71,6 @@ body{
 .about-us{
     background-color: black;
     color: grey;
-   margin-top: 20px;
-    border-radius: 20px;
 }
 
 
@@ -118,4 +126,19 @@ body{
 
     .services {
         font-size: 16px;}
-    }   
+    }
+
+    .card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+        animation-delay: 0.3s;
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
